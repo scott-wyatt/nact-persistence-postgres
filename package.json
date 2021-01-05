@@ -1,6 +1,6 @@
 {
   "name": "nact-persistence-postgres-encrypted",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "nact-persistence-postgres-encrypted ⇒ nact + postresql + encryption = your services have never been so persistent and secure",
   "main": "lib/index.js",
   "scripts": {

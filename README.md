@@ -6,17 +6,19 @@ A postgres persistence plugin for NAct that allows for encrypting fields on a pe
 > NOTE: This is Community Plugin and not officially supported by the Nact maintainers.
 
 ## Usage
-When persisting an event, pass an `annotations` parameter with at least the key `encrypt` to aes-256 encrypt the value of the property.
+When persisting an event, pass an `annotations` parameter with at least the key `encrypt` to aes-256 encrypt the value of the property. This also supports sha256, hmac, md5, and bcrypt encryption.
 
 ```
 persist(msg, tags, {
     "encrypt": {
-      "my_obj_prop": "jsonb",
-      "my_nested_obj_prop.my_obj_prop": "jsonb",
-      "my_array_prop": "jsonb",
-      "my_string_prop": "text",
-      "my_int_prop": "int",
-      "my_float_prop": "double"
+      "my_obj_prop": "aes",
+      "my_nested_obj_prop.my_obj_prop": "sha256",
+      "my_array_prop": "hmac",
+      "my_string_prop": "bcrypt",
+      "my_int_prop": "md5",
+      "my_float_prop": "bcrypt6",
+      "my_float_prop2": "bcrypt7",
+      "my_float_prop3": "bcrypt8"
     }
 })
 ```
